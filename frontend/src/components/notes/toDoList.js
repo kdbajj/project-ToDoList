@@ -4,6 +4,7 @@ import Note from "../Note/Note";
 import NewNote from "../NewNote/NewNote";
 import EditNote from "../EditNote/EditNote";
 import Modal from "react-modal";
+import axios from "axios";
 
 class ToDoList extends React.Component {
   constructor(props) {
@@ -25,6 +26,10 @@ class ToDoList extends React.Component {
       showEditModal: false,
       editNote: {},
     };
+  }
+
+  fechNotes() {
+    axios.get();
   }
 
   //usuwanie notatki
