@@ -20,6 +20,22 @@
   font-size: x-large;
 }
 
+input{
+  display: block;
+  width: 100%;
+  padding: .375 rem .75 rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: rgb(0, 0, 0);
+  background-color: rgb(236, 225, 245);
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25 rem;
+  border-color: dimgray;
+  margin-bottom: 10 px;
+}
+
+
 .note h1{
   color: rgb(255, 255, 255);
   /* text-align: center; */

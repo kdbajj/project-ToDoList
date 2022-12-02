@@ -15,6 +15,7 @@
     "mongoose": "^6.7.4",
     "nodemon": "^2.0.20",
     "react-icons": "^4.7.1",
+    "react-modal": "^3.16.1",
     "yarn": "^1.22.19"
   }
 }
