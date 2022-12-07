@@ -19,7 +19,7 @@ export default function EditNote(props) {
     const note = {
       title: title,
       body: desc,
-      id: props.id,
+      _id: props._id,
     };
     props.onEdit(note);
   };

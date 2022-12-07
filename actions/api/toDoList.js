@@ -27,7 +27,7 @@ class NoteActions {
   }
 
   async getNote(req, res) {
-    const id = req.params.id;
+    const id = req.params._id;
     const note = await Note.findOne({ _id: id });
     // pobieranie notatek
     res.status(200).json(note);
@@ -35,7 +35,7 @@ class NoteActions {
 
   // aktualizowanie notatek
   async updateNote(req, res) {
-    const id = req.params.id;
+    const id = req.params._id;
     const title = req.body.title;
     const body = req.body.body;
 
@@ -49,7 +49,7 @@ class NoteActions {
 
   // usuwanie notatek
   async deleteNote(req, res) {
-    const id = req.params.id;
+    const id = req.params._id;
     await Note.deleteOne({ _id: id });
 
     res.sendStatus(204);

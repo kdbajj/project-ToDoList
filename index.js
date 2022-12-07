@@ -4,6 +4,8 @@ const { port } = require("./config");
 const apiRouter = require("./routes/api");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const cors = require("cors");
+const { application } = require("express");
 
 const DB =
   "mongodb+srv://admin:WSboMFlDG1bIjaSc@cluster0.0n89seq.mongodb.net/?retryWrites=true&w=majority";
@@ -12,8 +14,10 @@ const DB =
 //Content-type: application/json
 app.use(bodyParser.json());
 
-app.use("/api/", apiRouter);
+// fix cors
+app.use(cors());
 
+app.use("/api/", apiRouter);
 mongoose
   .connect(DB, {
     useNewUrlParser: true,

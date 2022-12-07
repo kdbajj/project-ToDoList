@@ -13,13 +13,13 @@ function Note(props) {
     props.onEdit({
       title: props.title,
       body: props.body,
-      id: props.id,
+      _id: props._id,
     });
   };
 
   return (
     <div className="note">
-      <p onClick={() => toggleDesc()}>{props.title}</p>
+      <p onClick={toggleDesc}>{props.title}</p>
       {showDesc && <div className="description">{props.body}</div>}
 
       <button onClick={editHandler}>edytuj</button>
