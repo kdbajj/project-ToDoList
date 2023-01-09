@@ -15,17 +15,18 @@ function NewNote(props) {
     setDesc(value);
   };
 
-  const addNote = () => {
-    const note = {
-      title: title,
-      body: desc,
-    };
+  const note = {
+    title: title,
+    body: desc,
+  };
+  const addNote = async () => {
     props.onAdd(note);
 
     setTitle("");
     setDesc("");
     showSetForm(false);
   };
+
   return showForm ? (
     <div className="note">
       <label>Tytuł: </label>

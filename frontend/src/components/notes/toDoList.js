@@ -32,18 +32,15 @@ class ToDoList extends React.Component {
   async deleteNote(id) {
     console.log("usuwanie notatki", id);
     const notes = [...this.state.notes].filter((note) => note._id !== id);
-    await axios.delete("http://localhost:3001/api/notes" + id);
+    await axios.delete("http://localhost:3001/api/notes/" + id);
     this.setState({ notes });
   }
 
   //usuwanie notatki
   async addNote(note) {
     const notes = [...this.state.notes];
-
-    const res = await axios.post("http://localhost:3001/api/notes", note);
-    const newNote = res.data;
-
-    notes.push(newNote);
+    await axios.post("http://localhost:3001/api/notes", note);
+    notes.push(note);
     this.setState({ notes });
   }
 
@@ -86,14 +83,14 @@ class ToDoList extends React.Component {
           <button onClick={() => this.toggleModal()}>Anuluj</button>
         </Modal>
 
-        {this.state.notes.map((note) => (
+        {this.state.notes.map((note, index) => (
           <Note
-            key={note._id}
+            key={note._id ?? index}
             title={note.title}
             body={note.body}
             id={note._id}
             onEdit={(note) => this.editNoteHandler(note)}
-            onDelete={(id) => this.deleteNote(id)}
+            onDelete={() => this.deleteNote(note._id)}
           />
         ))}
       </div>
